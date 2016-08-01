@@ -10,10 +10,13 @@ let subscriber = ({ getRootRef })=> {
 
 let channel = ({ path, rootRef })=> {
   return {
-    on: (eventName)=> {
+    on: (eventName, handler)=> {
       let ref = rootRef.child(path)
 
       //TODO
+      ref.on('value', (snapshot)=>{
+        handler(snapshot.val())
+      })
     }
   }
 }

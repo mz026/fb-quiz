@@ -39,4 +39,22 @@ describe('FB Subscriber', ()=> {
     subscribe('data').on('value', onValue)
     expect(mockChildRef.on).to.have.been.calledWith('value', sinon.match.func)
   })
+
+  it('invokes callback with pure value', ()=> {
+    let callback
+    let onValue = sinon.stub()
+    mockChildRef.on = (eventName, cb)=> {
+      callback = cb
+    }
+    let snapshot = {
+      val: ()=> {
+        return { key: 'val' }
+      }
+    }
+
+    subscribe('data').on('value', onValue)
+    callback(snapshot)
+
+    expect(onValue).to.have.been.calledWith({ key: 'val' })
+  })
 })
