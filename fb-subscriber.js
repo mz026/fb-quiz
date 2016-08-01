@@ -1,8 +1,20 @@
 import Firebase from 'firebase'
 
 let subscriber = ({ getRootRef })=> {
-  // TODO
-  return ()=> {
+  let rootRef = getRootRef()
+
+  return (path)=> {
+    return channel({ path, rootRef })
+  }
+}
+
+let channel = ({ path, rootRef })=> {
+  return {
+    on: (eventName)=> {
+      let ref = rootRef.child(path)
+
+      //TODO
+    }
   }
 }
 
