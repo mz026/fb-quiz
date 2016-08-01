@@ -14,9 +14,6 @@ let channel = ({ path, rootRef })=> {
       let ref = rootRef.child(path)
 
       //TODO
-      ref.on('value', (snapshot)=>{
-        handler(snapshot.val())
-      })
     }
   }
 }
