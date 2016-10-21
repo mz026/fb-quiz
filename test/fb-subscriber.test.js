@@ -35,27 +35,11 @@ describe('FB Subscriber', ()=> {
     expect(mockRootRef.child).to.be.calledWith('path')
   })
 
-  // it('registers event name on child ref', ()=> {
-  //   let onEvent = sinon.stub()
-  //   subscribe('path').on('value', onEvent)
-  //   expect(mockChildRef.on).to.have.been.calledWith('value', sinon.match.func)
-  // })
+  it('registers event name on child ref', ()=> {
+    //TODO
+  })
 
-  // it('invokes callback with pure value', ()=> {
-  //   let callback
-  //   let onEvent = sinon.stub()
-  //   mockChildRef.on = (eventName, cb)=> {
-  //     callback = cb
-  //   }
-  //   let snapshot = {
-  //     val: ()=> {
-  //       return { key: 'val' }
-  //     }
-  //   }
-  //
-  //   subscribe('path').on('value', onEvent)
-  //   callback(snapshot)
-  //
-  //   expect(onEvent).to.have.been.calledWith({ key: 'val' })
-  // })
+  it('invokes callback with pure value', ()=> {
+    //TODO
+  })
 })
