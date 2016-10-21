@@ -39,3 +39,9 @@ channel.on('value', (val)=> {
 
 channel.off()
 ```
+
+## To try out original firebase SDK:
+
+```
+babel-node original.js
+```
